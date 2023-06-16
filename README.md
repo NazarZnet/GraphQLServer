@@ -28,7 +28,7 @@ Open http://127.0.0.1:8080/graphiql
 |          /graphiql            |     GET    | GraphQl playgroung
 |         /graphql         |     POST    | Send your queries and mutations here                     |
 
-### GraphQl key fucntions:
+### GraphQl key functions:
 | Function                   | Description                                                           |
 |----------------------------|-----------------------------------------------------------------------|
 | version                    | Returns server version                                                |
