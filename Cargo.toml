@@ -15,7 +15,7 @@ juniper = {git ="https://github.com/graphql-rust/juniper.git",features=["time"]}
 serde = {verison="1.0.152", features=["derive"]}
 serde_json="*"
 
-sqlx = { version = "0.6.2", features = ["postgres", "runtime-actix-native-tls","uuid","time"] }
+sqlx = { version = "0.6.2", features = ["postgres", "runtime-actix-native-tls","uuid","time","offline"] }
 
 time = {version="0.3.20", features=['serde','serde-well-known','std']}
 validator={version="0.16",features=["derive"]}

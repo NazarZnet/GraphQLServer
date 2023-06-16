@@ -1,0 +1,256 @@
+{
+  "db": "PostgreSQL",
+  "12d1563e608f7e2908340a38e35e0e198b73e287e43a3d2d294f88d37e1c5c53": {
+    "describe": {
+      "columns": [
+        {
+          "name": "friend",
+          "ordinal": 0,
+          "type_info": "Varchar"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Uuid"
+        ]
+      }
+    },
+    "query": "select friend from friends where user_id=$1"
+  },
+  "4c8cfa9644417b605a011021d507e8a76c5393a3c991fc52f55e6162ed949623": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Uuid"
+        },
+        {
+          "name": "username",
+          "ordinal": 1,
+          "type_info": "Varchar"
+        },
+        {
+          "name": "password_hash",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "logged_at",
+          "ordinal": 3,
+          "type_info": "Timestamptz"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Text"
+        ]
+      }
+    },
+    "query": "select id,username,password_hash,logged_at from users where username=$1"
+  },
+  "5694b5fc27c4a72af8a0c82b51197dbf2f2b3d3aff4b02c7efcf8a0bdf648b19": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Uuid"
+        },
+        {
+          "name": "name",
+          "ordinal": 1,
+          "type_info": "Varchar"
+        }
+      ],
+      "nullable": [
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Text"
+        ]
+      }
+    },
+    "query": "select id,name from users where name = $1"
+  },
+  "68650364be8ef7fb10883567c5dae245f933515c957fb8e25aab91c13d925782": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Left": [
+          "Timestamptz",
+          "Uuid"
+        ]
+      }
+    },
+    "query": "update users set logged_at=$1 where id=$2"
+  },
+  "6fdd10db164659017a38ac1346f8f00cb6486beaa7d37a787ea639d6ccae205c": {
+    "describe": {
+      "columns": [
+        {
+          "name": "name",
+          "ordinal": 0,
+          "type_info": "Varchar"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Uuid"
+        ]
+      }
+    },
+    "query": "select name from users where id=$1"
+  },
+  "70611fed9840f11ecd8e8b3e6f9cceca63e2ccf180a88535e3b08eb5c42e4f64": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Left": [
+          "Uuid",
+          "Text"
+        ]
+      }
+    },
+    "query": "delete from friends where user_id=$1 and friend=$2"
+  },
+  "7609165d94c8f1bea9d535b9b7ad727fd06592973d7f83017292d41acb203be6": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Uuid"
+        },
+        {
+          "name": "name",
+          "ordinal": 1,
+          "type_info": "Varchar"
+        },
+        {
+          "name": "username",
+          "ordinal": 2,
+          "type_info": "Varchar"
+        },
+        {
+          "name": "password_hash",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "logged_at",
+          "ordinal": 4,
+          "type_info": "Timestamptz"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Uuid"
+        ]
+      }
+    },
+    "query": "select * from users where id = $1"
+  },
+  "9b827890d284d31c87b50ef36828dcbcebe4bebd26cf1f721e0dab236ae3a670": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Left": [
+          "Uuid",
+          "Varchar"
+        ]
+      }
+    },
+    "query": "insert into friends (user_id,friend) values($1,$2)"
+  },
+  "a62f5ad8f63eb51afd30ea6231bf78f8d898087b8c5ba196135b13596a77c611": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        },
+        {
+          "name": "user_id",
+          "ordinal": 1,
+          "type_info": "Uuid"
+        },
+        {
+          "name": "friend",
+          "ordinal": 2,
+          "type_info": "Varchar"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Uuid",
+          "Text"
+        ]
+      }
+    },
+    "query": "select * from friends where user_id=$1 and friend=$2"
+  },
+  "ab682fe79423530f1851c9db8c59f34033d07e7c0e05254934bfc58801dd26a5": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Left": [
+          "Uuid",
+          "Varchar",
+          "Varchar",
+          "Text"
+        ]
+      }
+    },
+    "query": "insert into users(id,name,username,password_hash) values ($1,$2,$3,$4);"
+  },
+  "c52cb3f9c7f66592300094b652cfa099811c1cfd841d806e6a4274067d1d15c0": {
+    "describe": {
+      "columns": [
+        {
+          "name": "name",
+          "ordinal": 0,
+          "type_info": "Varchar"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Left": []
+      }
+    },
+    "query": "select name from users;"
+  }
+}
